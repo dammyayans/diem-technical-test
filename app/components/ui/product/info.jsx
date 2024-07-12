@@ -20,7 +20,7 @@ export const ProductInfo = ({
   );
 
   return (
-    <section className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+    <section className="mt-10 sm:mt-16 sm:px-0 lg:mt-0">
       <h1 className="text-3xl font-bold tracking-tight text-primary">{title}</h1>
 
       <h2 className="sr-only">Product information</h2>
