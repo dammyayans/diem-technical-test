@@ -6,12 +6,15 @@
     "node": "18"
   },
   "scripts": {
-    "start": "remix dev -c \"node app/server.js\""
+    "start": "remix dev -c \"node app/server.js\"",
+    "build": "remix build"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.2",
     "@remix-run/express": "^2.1.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
+    "classnames": "^2.5.1",
     "express": "^4.18.2",
     "isbot": "^3.7.0",
     "react": "^18.2.0",
@@ -19,6 +22,9 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.1.0",
-    "prettier": "^3.0.3"
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.4.4"
   }
 }
