@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import Stars from '../stars';
 import { currencyFormat, getDiscountedPrice } from '../../../utils/currency';
 import { Link } from '@remix-run/react';
+import Button from '../button';
 
 export const ProductInfo = ({
   title,
@@ -47,12 +48,12 @@ export const ProductInfo = ({
           ·
         </div>
         <div className="ml-3 flex">
-          <Link
-            href="#reviews"
+          <a
+            href="#customer-reviews"
             className="text-sm font-medium text-primary transition-all hover:scale-105"
           >
             See all {reviewCount} reviews
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -63,9 +64,7 @@ export const ProductInfo = ({
       </div>
 
       <div className="mt-10">
-        <button className="flex w-full flex-1 items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">
-          Buy now
-        </button>
+        <Button>Buy now</Button>
       </div>
 
       <div className="mt-10 border-t border-gray-200 pt-10">

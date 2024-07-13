@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlobalIcon, BadgeIcon, CartIcon, ShieldIcon } from '../../icons';
+import PolicyCard from '../policy-card';
 
 export const ProductPolicies = ({
   warrantyInformation,
@@ -37,19 +38,17 @@ export const ProductPolicies = ({
 
       <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 mt-4">
         {policies.map((policy) => (
-          <div
+          <PolicyCard
             key={policy.name}
-            className="rounded-lg border border-gray-200 bg-gray-50 p-6 text-center"
-          >
-            <dt>
+            name={policy.name}
+            description={policy.description}
+            icon={
               <policy.icon
                 aria-hidden="true"
                 className="mx-auto h-6 w-6 flex-shrink-0 text-gray-400"
               />
-              <span className="mt-4 text-sm font-medium text-gray-900">{policy.name}</span>
-            </dt>
-            <dd className="mt-1 text-sm text-gray-500">{policy.description}</dd>
-          </div>
+            }
+          />
         ))}
       </dl>
     </section>
