@@ -14,7 +14,6 @@ const Product = ({ product }) => {
     dimensions,
     discountPercentage,
     images,
-    meta,
     minimumOrderQuantity,
     price,
     rating,
@@ -24,7 +23,6 @@ const Product = ({ product }) => {
     sku,
     stock,
     tags,
-    thumbnail,
     title,
     warrantyInformation,
     weight,
@@ -44,7 +42,10 @@ const Product = ({ product }) => {
             discountPercentage={discountPercentage}
             dimensions={dimensions}
             weight={weight}
+            stock={stock}
+            availabilityStatus={availabilityStatus}
             minimumOrderQuantity={minimumOrderQuantity}
+            tags={tags}
           />
           <ProductPolicies
             availabilityStatus={availabilityStatus}

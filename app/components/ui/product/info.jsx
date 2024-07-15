@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import Stars from '../stars';
 import { currencyFormat, getDiscountedPrice } from '../../../utils/currency';
-import { Link } from '@remix-run/react';
 import Button from '../button';
+import Badge from '../badge';
+import { getBadgeVariant } from '../../../utils/product';
+import ProductTags from './tags';
 
 export const ProductInfo = ({
   title,
@@ -14,6 +16,9 @@ export const ProductInfo = ({
   dimensions,
   weight,
   minimumOrderQuantity,
+  availabilityStatus,
+  stock,
+  tags,
 }) => {
   const discountedPrice = useMemo(
     () => getDiscountedPrice(price, discountPercentage),
@@ -23,9 +28,10 @@ export const ProductInfo = ({
   return (
     <section className="mt-10 sm:mt-16 sm:px-0 lg:mt-0">
       <h1 className="text-3xl font-bold tracking-tight text-primary">{title}</h1>
+      <ProductTags tags={tags} />
 
       <h2 className="sr-only">Product information</h2>
-      <div className="mt-3">
+      <div className="mt-4">
         <p className="text-3xl tracking-tight text-primary">
           {discountedPrice ? (
             <span>
@@ -64,6 +70,11 @@ export const ProductInfo = ({
       </div>
 
       <div className="mt-10">
+        <div className="flex mb-3 justify-center">
+          <Badge variant={getBadgeVariant(availabilityStatus)} className="animate-pulse">
+            {`${availabilityStatus} - Only ${stock} left`}
+          </Badge>
+        </div>
         <Button>Buy now</Button>
       </div>
 

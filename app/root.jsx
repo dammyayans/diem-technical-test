@@ -21,7 +21,7 @@ export const meta = ({ data }) => {
     },
     {
       property: 'og:image',
-      content: data.meta.qrCode,
+      content: data.thumbnail,
     },
     {
       name: 'description',
